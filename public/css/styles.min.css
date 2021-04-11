@@ -173,7 +173,9 @@ button:disabled {
 .dropup a:hover {
   background-color: #9147FF;
 }
-.show {display: block;}
+.show {
+  display: block;
+}
 /* Sidebar users */
 .users a {
   text-decoration: none;
