@@ -10,6 +10,7 @@ html {
 input {
   font-size: 14px;
   background-color: #4c4c4f;
+  border-radius: 2px;
 }
 ::placeholder {
     color: #c5c5c6;
@@ -39,6 +40,7 @@ button {
   border: none;
   font-size: 16px;
   transition: background 0.3s ease;
+  border-radius: 2px;
 }
 button:hover {
   background: #6b47b8;
@@ -125,6 +127,9 @@ button:disabled {
 .compose button {
   font-size: 14px;
 }
+#send-location {
+  margin-right: 16px;
+}
 .room-title {
   font-weight: 400;
   font-size: 22px;
@@ -143,3 +148,30 @@ button:disabled {
   font-weight: 300;
   padding: 12px 24px 0;
 }
+
+/* Settings dropup */
+.dropup {
+  position: relative;
+  display: inline-block;
+}
+
+.dropup-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  bottom: 50px;
+  right: 0;
+  z-index: 1;
+}
+
+.dropup-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropup a:hover {background-color: #ddd;}
+
+.show {display: block;}

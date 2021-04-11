@@ -6,6 +6,7 @@ const $messageFormInput = document.querySelector('input');
 const $messageFormButton = document.querySelector('button');
 const $sendLocationButton = document.querySelector('#send-location');
 const $messages = document.querySelector('#messages');
+const $dropup = document.querySelector('.dropup-content');
 
 // Templates
 const messageTemplate = document.querySelector('#message-template').innerHTML;
@@ -113,3 +114,23 @@ socket.emit('join', { username, room }, (error) => {
         location.href = '/';
     }
 });
+
+// Settings
+
+// Toggle between showing and hiding settings
+const settings = () => {
+    $dropup.classList.toggle('show');
+}
+
+// Close dropup if user clicks outside of it
+window.onclick = (event) => {
+    if (!event.target.matches('.dropbtn')) {
+      const dropups = document.getElementsByClassName("dropup-content");
+      for (i = 0; i < dropups.length; i++) {
+        const openDropup = dropups[i];
+        if (openDropup.classList.contains('show')) {
+            openDropup.classList.remove('show');
+        }
+      }
+    }
+  }
