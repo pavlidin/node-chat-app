@@ -14,9 +14,21 @@ const addUser = ({ id, username, room }) => {
         };
     }
 
+    if (room.length > 14) {
+        return {
+            error: 'Room name limit exceeded! (max 14 characters)'
+        }
+    }
+
+    if (username.length > 14) {
+        return {
+            error: 'Username limit exceeded! (max 14 characters)'
+        }
+    }
+
     // Check for existing user
     const existingUser = users.find((user) => {
-        return user.room === room && user.username === username;
+        return user.username === username;
     });
 
     // Validate username
