@@ -25,8 +25,8 @@
                 </form>
                 <button id="send-location">Send location</button>
                 <div class="dropup">
-                    <button class="dropbtn" onclick="settings()">Settings</button>
-                    <div id="settings" class="dropup-content">
+                    <button id="settings" onclick="settings()">Settings</button>
+                    <div class="dropup-content">
                         <a href="#">Placeholder 1</a>
                         <a href="#">Placeholder 2</a>
                         <a href="#">Placeholder 3</a>
@@ -61,7 +61,8 @@
         <h3 class="list-title">Users</h3>
         <ul class="users">
             {{#users}}
-                <li>{{username}}</li>
+                <a id="{{username}}">{{username}}</a>
+            </div>
             {{/users}}
         </ul>
     </script>

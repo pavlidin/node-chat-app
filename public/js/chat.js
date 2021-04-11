@@ -6,6 +6,7 @@ const $messageFormInput = document.querySelector('input');
 const $messageFormButton = document.querySelector('button');
 const $sendLocationButton = document.querySelector('#send-location');
 const $messages = document.querySelector('#messages');
+const $settings = document.querySelector('#settings');
 const $dropup = document.querySelector('.dropup-content');
 
 // Templates
@@ -62,7 +63,7 @@ socket.on('locationMessage', (message) => {
 });
 
 socket.on('roomData', ({ room, users }) => {
-    const html =  Mustache.render(sidebarTemplate, {
+    const html = Mustache.render(sidebarTemplate, {
         room,
         users
     })
@@ -116,21 +117,29 @@ socket.emit('join', { username, room }, (error) => {
 });
 
 // Settings
-
 // Toggle between showing and hiding settings
+
 const settings = () => {
+    console.log('rrr');
     $dropup.classList.toggle('show');
 }
 
 // Close dropup if user clicks outside of it
 window.onclick = (event) => {
     if (!event.target.matches('.dropbtn')) {
-      const dropups = document.getElementsByClassName("dropup-content");
-      for (i = 0; i < dropups.length; i++) {
-        const openDropup = dropups[i];
-        if (openDropup.classList.contains('show')) {
-            openDropup.classList.remove('show');
+        const dropups = document.querySelectorAll('.dropup-content');
+        const dropdowns = document.querySelectorAll('.profile-dropdown');
+        for (i = 0; i < dropups.length; i++) {
+            const openDropup = dropups[i];
+            if (openDropup.classList.contains('show')) {
+                openDropup.classList.remove('show');
+            }
         }
-      }
+        for (i = 0; i < dropdowns.length; i++) {
+            const openDropdown = dropdowns[i];
+            if (openDropdown.classList.contains('show')) {
+                openDropdown.classList.remove('show');
+            }
+        }
     }
-  }
+}
