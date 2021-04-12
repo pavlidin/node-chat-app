@@ -25,6 +25,7 @@ const addUser = ({ id, username, room }) => {
             error: 'Username limit exceeded! (max 14 characters)'
         }
     }
+
     // Check for existing user
     const existingUser = users.find((user) => {
         return user.username === username;
