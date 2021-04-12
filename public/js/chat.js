@@ -123,12 +123,8 @@ $settingsButton.addEventListener('click', () => $settingsDropUp.classList.toggle
 // Close dropup if user clicks outside of it
 window.onclick = (event) => {
     if (!event.target.matches('.dropbtn')) {
-        const dropups = $settingsDropUp;
-        for (i = 0; i < dropups.length; i++) {
-            const openDropup = dropups[i];
-            if (openDropup.classList.contains('show')) {
-                openDropup.classList.remove('show');
+            if ($settingsDropUp.classList.contains('show')) {
+                $settingsDropUp.classList.remove('show');
             }
-        }
     }
 }
