@@ -17,7 +17,6 @@ input {
 }
 body {
   line-height: 1.4;
-
   font-family: Helvetica, Arial, sans-serif;
 }
 h1 {
@@ -58,10 +57,10 @@ button:disabled {
   align-items: center;
 }
 .centered-form__box {
-  box-shadow: 5px 5px 0 0 #1d1f26;
   background: #18181b;
   padding: 24px;
   width: 250px;
+  box-shadow: 5px 5px 10px #9147FF;
 }
 .centered-form button {
   width: 100%;
