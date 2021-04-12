@@ -72,8 +72,4 @@ io.on('connection', (socket) => {
     });
 });
 
-app.use((req, res) => {
-    res.status(404).send();
-});
-
 server.listen(port, () => console.log(`Server is up on port ${port}!`));
